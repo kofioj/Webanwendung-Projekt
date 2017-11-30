@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Artikel</title>
+    </head>
+    <body>
+        <table>
+            <% for (let i=0; i < artikelliste.length; i++) { %>
+                <tr>
+                    <td> <%= artikelliste[i].artikel %></td>
+                    <td> <%= artikelliste[i].preis %></td>
+                    <td> 
+                        <form action="<%= '/delete/' + artikelliste[i]._id %>" method="POST"> 
+                            <button type="submit">Entfernen</button>
+                        </form>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+        <a href="/create">Neuen Artikel hinzufügen</a>
+    </body>
+</html>
